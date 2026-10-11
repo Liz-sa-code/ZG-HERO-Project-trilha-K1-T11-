@@ -1,0 +1,28 @@
+plugins {
+    id 'groovy'
+    id 'application'
+}
+
+group = 'br.com.crawlertiss'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy:3.0.21'
+    implementation 'org.codehaus.groovy:groovy-xml:3.0.21'
+    implementation 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
+    implementation 'org.jsoup:jsoup:1.18.3'
+
+    testImplementation 'org.spockframework:spock-core:2.3-groovy-3.0'
+}
+
+application {
+    mainClass = 'Main'
+}
+
+tasks.withType(GroovyCompile).configureEach {
+    groovyOptions.encoding = 'UTF-8'
+}
